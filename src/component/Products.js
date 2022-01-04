@@ -5,18 +5,14 @@ import Product from "./Product";
 
 
 const Products = ({ products }) => {
-    console.log("🚀 ~ file: Products.js ~ line 8 ~ Products ~ products", products)
     return (
         <div className='grid wide'>
             <div className='row'>
-                {
-                    products?.map((prod) =>
-                    {
-                        console.log("🚀 ~ file: Products.js ~ line 14 ~ Products ~ prod", prod)
-                        return(
-                        <Product key={prod.id} productData={prod} />
-                    )})
-                }
+                {products?.map((product)=>{
+                    return(
+                        <Product key={product.id} img={product.img} title={product.title} price={product.price} />
+                    )
+                })}
             </div>
         </div>
     );
